@@ -1,0 +1,15 @@
+﻿6.6 Guided Capstone 1 Documentation Write Up
+Elijah Seeley
+Springboard
+
+
+### This write up should not be taken too seriously. I am not quite sure how to completely read the data for this project. I saw it more as a training exercise and an introduction into fitting data into models (which I still do not completely understand), but am working on it. Because I am unsure how to interpret the coefficients of this data, I am just going to breeze over some points here. ###
+
+
+It looks as though the location of the resort as well as the amount of lifts/chairs have the greatest impact on the sales for that year. 
+
+
+It looks like night skiing has some of the lowest indicators of importance.
+
+
+Just from this I recommend that maybe we only introduce the new lifts to the states, such as Vermont, Wisconsin, with high coefficients, that will provide the most value. Also, to decrease the energy needed on these resorts we should consider shutting down the night-skiing in areas where night skiing is not popular as we will save on utilization costs and labor.
