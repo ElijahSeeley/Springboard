@@ -108,18 +108,18 @@ the guest user's ID is always 0. Include in your output the name of the
 facility, the name of the member formatted as a single column, and the cost.
 Order by descending cost, and do not use any subqueries. */
 
-select concat(m.firstname, ' ', m.surname) as member_name, f.name as fac_name, f.guestcost, f.membercost
+select concat(m.firstname, ' ', m.surname) as member_name, f.name as fac_name, case when m.memid = 0 then f.guestcost else f.membercost end as cost
 from Bookings as b
 Left Join Members as m
 on m.memid = b.memid
 left join Facilities as f
-on f.facid = m.memid
+on f.facid = b.facid
 where b.starttime like '2012-09-04%' and f.name is not null
+having cost >=30;
 
--- this is incomplete, I can't figure out how to only show the guestcost or membercost
--- to the correct parties
 
 /* Q9: This time, produce the same result as in Q8, but using a subquery. */
+
 
 
 /* PART 2: SQLite
