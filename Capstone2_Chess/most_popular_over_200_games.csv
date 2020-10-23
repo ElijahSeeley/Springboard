@@ -1,4 +1,4 @@
-,turns,victory_status,winner,increment_code,white_rating,black_rating,opening_eco,opening_name,opening_move_count
+game_id,turns,victory_status,winner,increment_code,white_rating,black_rating,opening_eco,opening_name,opening_move_count
 1,16,resign,black,Blitz,1322,1261,B00,Nimzowitsch Defense: Kennedy Variation,4
 2,61,mate,white,Blitz,1496,1500,C20,King's Pawn Game: Leonardis Variation,3
 3,61,mate,white,Rapid,1439,1454,D02,Queen's Pawn Game: Zukertort Variation,3
