@@ -119,9 +119,6 @@ having cost >=30;
 
 
 /* Q9: This time, produce the same result as in Q8, but using a subquery. */
-
-
-
 /* PART 2: SQLite
 /* We now want you to jump over to a local instance of the database on your machine. 
 
@@ -142,11 +139,38 @@ QUESTIONS:
 The output of facility name and total revenue, sorted by revenue. Remember
 that there's a different cost for guests and members! */
 
+        SELECT f.name, sum(f.membercost) + sum(f.guestcost) as cost
+        from FACILITIES as f
+        left join BOOKINGS as b
+        on b.facid = f.facid
+        group by f.name;
+
 /* Q11: Produce a report of members and who recommended them in alphabetic surname,firstname order */
 
+select m.surname, m.firstname, mm.surname, mm.firstname
+        from MEMBERS as m
+        left join MEMBERS as mm
+        on m.recommendedby = mm.memid
+        order by m.surname asc
+        ;
 
 /* Q12: Find the facilities with their usage by member, but not guests */
 
+select f.name, count(b.facid)
+        from FACILITIES as f
+        left join BOOKINGS as b
+        on b.facid = f.facid
+        where b.memid <> 0
+        group by f.name
 
 /* Q13: Find the facilities usage by month, but not guests */
 
+select f.name, count(b.facid), case
+            when b.starttime like '2012-07%' then 'July'
+            when b.starttime like '2012-08%' then 'August'
+            when b.starttime like '2012-09%' then 'September'
+            else 'Mistaken Month' end as month
+        from BOOKINGS as b
+        left join FACILITIES as f
+        on f.facid = b.facid
+        group by f.name, month
