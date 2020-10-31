@@ -18,7 +18,7 @@ From these openings we wanted to see the victory rate by mate, resignation, time
 the opening played by these players by the games other items, such as player ranking, moves played, etc. without actually seeing the moves. After testing it was discovered that
 we may not have enough data to provide the model in order to make this feasible. Either this or the model is destined to be unsuccessful, but another attempt will be made in the future.
 Transitioning off of this goal it was settled that using the available items to train a machine learning algorithm to predict the winners of the games from these outside variables.
-With our relatively small final dataset (sub 2000 games) it would be interesting to see what was possible and what combinations of points would hurt or help the accuracy of the
+With our relatively small final dataset (about 11000 games) it would be interesting to see what was possible and what combinations of points would hurt or help the accuracy of the
 machine learning algorithm.
 
 ### 2.The Data
